@@ -14,18 +14,14 @@ foreach($teste as $tes){
 $resultado =  implode(" - ",$te);
 $ip = $_SERVER['REMOTE_ADDR'];
 $list->update($resultado,$mail, $ip);
-
       
-			    	
-					    foreach($resuEmail as $final){
-					     
-					      		$corpo .= $final['curs_descricao']." - ";
-					       
-					    } 
+/*			    	
+foreach($resuEmail as $final){
+
+	$corpo .= $final['curs_descricao']." - ";
+
+} 
 				
-echo $corpo;
-
-
 $para = $mail;
 $assunto = "Resultado - Teste Vocacional UNIDESC 2017";
 $corpo = "Resultado: Teste ".$corpo;
@@ -34,16 +30,17 @@ $cabecalho = "Form: testevocacional@unidesc.com.br"."\r\n".
               "X-Mailer: PHP/".phpversion();
               
               mail($para, $assunto, $corpo, $cabecalho);
-
-
-
 		if(isset($_POST['finalizar'])):
 	        header('Location:index.php');
 	        session_unset();
 	        session_destroy();
 	  endif;
-        
-
+*/        
+if(isset($_POST['finalizar'])):
+	header('Location:index.php');
+	session_unset();
+	session_destroy();
+endif;
 ?>
 <!DOCTYPE html>
 <html lang="en">
