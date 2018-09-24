@@ -102,14 +102,14 @@ require_once "App/regCadastro.php";
                  <div class="contact-form">
                   <fieldset>
                     <label class="">
-                     Seu nome: <input type="text" required=name name="nome" id="nome" placeholder="digite seu nome:"  data-constraints="@Required @nome" /><br><br>
+                     Seu nome: <input type="text" required=name name="nome" id="nome" placeholder="Digite seu nome:"  data-constraints="@Required @nome" /><br><br>
                        
                     </label>
                  
                     <label for="phonenum">
                         
 
-                     Digite seu telefone:  <input type="tel" id="fone" required=name name="fone" placeholder=" digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" />
+                     Digite seu telefone:  <input type="tel" id="fone" required=name name="fone" placeholder="Digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" />
                     
                     </label>
                     <label class="">
