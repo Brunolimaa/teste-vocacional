@@ -178,7 +178,7 @@ require_once "App/regCadastro.php";
                   </fieldset> 
                   </div>
                 </form>   
-                <button type="button"  data-toggle="modal" id="model" data-target="#myModal"></button>
+                <button type="button"  data-toggle="modal" id="model" style="display:none;" data-target="#myModal"></button>
                     <!-- Modal-->
                 <div class="container">
                   <!-- Trigger the modal with a button -->

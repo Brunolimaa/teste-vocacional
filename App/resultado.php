@@ -1,16 +1,25 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+	session_start(); 
+} 
 require_once "Conexao.php";
 require_once "Candidato.php";
 require'validar.class.php';//$val = new validar();
 
 $val = new validar();
-//$val->validar1('../cadastro.php');
-$_SESSION['grupo'] .= $_GET['letra'];
+$_SESSION['grupo'] .= isset($_GET['letra']) ? $_GET['letra'] : "";
+
 $var = $_SESSION['grupo'];
 $cont = strlen($var);
 $var1 = str_split($var,1);
 
+$a = "";
+$b = "";
+$c = "";
+$d = "";
+$e = "";
+$f = "";
 
 for($i=0; $i<$cont;$i++){
 		if($var1[$i] == 'A'){
@@ -28,7 +37,6 @@ for($i=0; $i<$cont;$i++){
 		}
 
 }
-//var_dump($var);
 $a = strlen($a);
 $b = strlen($b);
 $c = strlen($c);
@@ -53,7 +61,5 @@ if($a > $b){
 }else{
 	$re = "E";
 }
-
-//echo "RESPOSTA: ".$re;
 ?>
 

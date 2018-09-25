@@ -11,8 +11,6 @@ require_once "Candidato.php";
 	$cidade = filter_input(INPUT_POST,"cidade",FILTER_SANITIZE_MAGIC_QUOTES);
 	$serie  = filter_input(INPUT_POST,"serie",FILTER_SANITIZE_MAGIC_QUOTES);
 		
-		echo $nome." - ".$mail." - ".$fone." - ".$cidade." - ".$serie;
-		
 		if(!empty($nome) && !empty($mail) && !empty($fone) && !empty($cidade) && !empty($serie)){
 		$cad = new Candidato;
 			$cad->setNome($nome);
@@ -49,9 +47,9 @@ require_once "Candidato.php";
 				}*/
 	//echo $_SESSION['mensagem'];
 //}				
-//if(isset($_POST['send'])){
+if(isset($_POST['send'])){
 	$_SESSION['valor'] += isset($_POST['op']) ? $_POST['op'] : "" ;
-//}
+}
 if(!empty($_SESSION['candidato'])){
     
     return true;

@@ -210,7 +210,7 @@ endif;
             type:'GET',
             data: {letra:var_name},
             success:function(r){
-               //alert(r);
+               alert(r);
             }
         });
      
