@@ -1,21 +1,21 @@
 <?php
 require_once "App/regCadastro.php";
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Faça seu cadastro para fazer o teste vocacional </title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="icon" href="images/favicon.ico">
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/logo_icone.png">
+<link rel="shortcut icon" href="images/logo_icone.png" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="js/sweetalert2.min.css">
+<link rel="stylesheet" href="js/sweetalert2.min.js">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/script.js"></script> 
-<script src="js/superfish.js"></script>
+<!--<script src="js/superfish.js"></script>-->
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/tmStickUp.js"></script>
@@ -102,14 +102,14 @@ require_once "App/regCadastro.php";
                  <div class="contact-form">
                   <fieldset>
                     <label class="">
-                     Seu nome: <input type="text" required=name name="nome" id="nome" placeholder="digite seu nome:"  data-constraints="@Required @nome" /><br><br>
+                     Seu nome: <input type="text" required=name name="nome" id="nome" placeholder="Digite seu nome:"  data-constraints="@Required @nome" /><br><br>
                        
                     </label>
                  
                     <label for="phonenum">
                         
 
-                     Digite seu telefone:  <input type="tel" id="fone" required=name name="fone" placeholder=" digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" />
+                     Digite seu telefone:  <input type="tel" id="fone" required=name name="fone" placeholder=" Digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" />
                     
                     </label>
                     <label class="">
@@ -121,33 +121,33 @@ require_once "App/regCadastro.php";
                      Selecione sua cidade:<br>
 							
 							<select class="form" required name="cidade" id="cidade"  >
-								<option  value="" selected="selected"  ><a>Selecionar </a></option>
+								<option  value="" selected="selected"  > Selecionar  </option>
 								<option value="Luziania">Luziânia</option>
 								<option value="Valparaiso">Valparaiso</a></option>
-								<option value="Novo gama"><a>Novo Gama</a></option>
-								<option value="Gama"><a>Gama</a></option>
-								<option value="Brasilia"><a>Brasília</a></option>
-								<option value="Ocidental"><a>Ocidental</a></option>
-								<option value="Aguas Claras"><a>Águas Claras</a></option>
-								<option value="Taguatinga"><a>Taguatinga</a></option>
-								<option value="CeilAndia"><a>Ceilândia</a></option>
-								<option value="Brazlândia"><a>Brazlândia</a></option>								
-								<option value="Sobradinho"><a>Sobradinho </a></option>
-								<option value="Planaltina "><a>Planaltina </a></option>
-								<option value="Paranoá"><a>Paranoá </a></option>
-								<option value="Núcleo Bandeirante"><a>Núcleo Bandeirante</a></option>
-								<option value="Guará "><a>Guará </a></option>
-								<option value="Samambaia "><a>Samambaia </a></option>
-								<option value=" Santa Maria  "><a> Santa Maria  </a></option>
-								<option value="São Sebastião "><a>São Sebastião </a></option>
-								<option value="Recanto das Emas "><a>Recanto das Emas </a></option>
-								<option value=" Lago Sul  "><a> Lago Sul  </a></option>
-								<option value="Riacho Fundo  "><a>Riacho Fundo  </a></option>
-								<option value="Lago Norte "><a>Lago Norte  </a></option>
-								<option value="Candangolândia  "><a>Candangolândia  </a></option>
-								<option value="Riacho Fundo II "><a>Riacho Fundo II </a></option>
-								<option value="Park Way"><a>Park Way </a></option>
-								<option value="Itapoã"><a>Itapoã </a></option>
+								<option value="Novo gama"> Novo Gama </option>
+								<option value="Gama"> Gama </option>
+								<option value="Brasilia"> Brasília </option>
+								<option value="Ocidental"> Ocidental </option>
+								<option value="Aguas Claras"> Águas Claras </option>
+								<option value="Taguatinga"> Taguatinga </option>
+								<option value="CeilAndia"> Ceilândia </option>
+								<option value="Brazlândia"> Brazlândia </option>
+								<option value="Sobradinho"> Sobradinho  </option>
+								<option value="Planaltina "> Planaltina  </option>
+								<option value="Paranoá"> Paranoá  </option>
+								<option value="Núcleo Bandeirante"> Núcleo Bandeirante </option>
+								<option value="Guará "> Guará  </option>
+								<option value="Samambaia "> Samambaia  </option>
+								<option value=" Santa Maria  ">  Santa Maria   </option>
+								<option value="São Sebastião "> São Sebastião  </option>
+								<option value="Recanto das Emas "> Recanto das Emas  </option>
+								<option value=" Lago Sul  ">  Lago Sul   </option>
+								<option value="Riacho Fundo  "> Riacho Fundo   </option>
+								<option value="Lago Norte "> Lago Norte   </option>
+								<option value="Candangolândia  "> Candangolândia   </option>
+								<option value="Riacho Fundo II "> Riacho Fundo II  </option>
+								<option value="Park Way"> Park Way  </option>
+								<option value="Itapoã"> Itapoã  </option>
 								 
 								 
 								
@@ -168,7 +168,7 @@ require_once "App/regCadastro.php";
     								<option value="1">1º</option>
     								<option value="2">2º</option>
     								<option value="3">3º</option>
-    								<option value="concluido">concluido</option>
+    								<option value="concluido">Concluído</option>
   								</optgroup>
 							</select>
                     </label>

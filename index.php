@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Faça seu teste vocacional agora!</title>
 <link rel="icon" type="image/png" href="" />
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="icon" href="images/favicon.ico">
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/logo_icone.png">
+<link rel="shortcut icon" href="images/logo_icone.png" />
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script src="js/script.js"></script> 
-<script src="js/superfish.js"></script>
+<!--<script src="js/superfish.js"></script>-->
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/tmStickUp.js"></script>
@@ -20,8 +20,8 @@
 <script>
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
-  $('#stuck_container').tmStickUp({});  
- }); 
+  $('#stuck_container').tmStickUp({});
+ });
 </script>
 <!--[if lt IE 8]>
  <div style=' clear: both; text-align:center; position: relative;'>
