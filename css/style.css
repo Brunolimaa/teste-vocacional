@@ -13,7 +13,7 @@
   padding: 15px 0;
 }
 .navigation .sf-menu {
-  
+
   z-index: 990;
   text-align: center;
   position: relative;
@@ -27,14 +27,14 @@
 }
 .sf-menu ul {
   position: absolute;
-  
+
   top: -999px;
   display: none;
 }
 .sf-menu > li > ul > li {
   float: none;
   position: static;
-  
+
 }
 .sf-menu > li {
   float: right;
@@ -249,14 +249,14 @@ h4 {
   font-size: 28px;
   line-height: 36px;
   font-weight: normal;
-  
+
    padding: 10px 10px 10px 10px;
   margin-left: 35%;
   width:20%;
 }
 .final{
   margin-left: 50px;
-  
+
 }
 .final button{
   background-color: #0FA125;
@@ -291,7 +291,7 @@ h4 {
 .cadastro2 input{
   background-color: #1E90FF;
   padding:20px 20px 20px 20px;
-  
+
   color:white;
   cursor: pointer;
   border-radius:7px;
@@ -968,7 +968,7 @@ a.color1:hover {
 
 .proximo{
       margin: 64px 528px;
-      
+
 }
 
 .iniciaTeste{
@@ -988,3 +988,10 @@ a.color1:hover {
     margin-bottom: 0px;
 }
 
+label.aviso{
+  color: #da2a0f;
+  font-size: 18px;
+  width: 866px;
+  height: 20px;
+
+}

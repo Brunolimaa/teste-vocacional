@@ -102,25 +102,25 @@ require_once "App/regCadastro.php";
                  <div class="contact-form">
                   <fieldset>
                     <label class="">
-                     Seu nome: <input type="text" required=name name="nome" id="nome" placeholder="Digite seu nome:"  data-constraints="@Required @nome" /><br><br>
+                     Seu nome: <input type="text"  name="nome" id="nome" placeholder="Digite seu nome:"  data-constraints="@Required @nome" required><br><br>
                        
                     </label>
                  
                     <label for="phonenum">
                         
 
-                     Digite seu telefone:  <input type="tel" id="fone" required=name name="fone" placeholder="Digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" />
+                     Digite seu telefone:  <input type="tel" id="fone"  name="fone" placeholder="Digite sem o digito '9' Ex.. 94621235 "  data-constraints="@Required @fone" required>
                     
                     </label>
                     <label class="">
-                     Digite seu email: <input type="text" required=name name="email" id="mail" placeholder="Digite seu email:" value="" data-constraints="@Required @email" />
+                     Digite seu email: <input type="text"  name="email" id="mail" placeholder="Digite seu email:" value="" data-constraints="@Required @email" required>
                      
                     </label>
                    
                     <label class="">
                      Selecione sua cidade:<br>
 							
-							<select class="form" required name="cidade" id="cidade"  >
+							<select class="form" name="cidade" id="cidade"  required>
 								<option  value="" selected="selected"  ><a>Selecionar </a></option>
 								<option value="Luziania">Luziânia</option>
 								<option value="Valparaiso">Valparaiso</a></option>
@@ -156,7 +156,7 @@ require_once "App/regCadastro.php";
                     </label>
                     <label class="">
                         Selecione sua serie:<br>
-                     <select class="form" required  name="serie" id="serie" >
+                     <select class="form" name="serie" id="serie" required>
 								<option value="" selected="selected" ><a>Selecionar</a></option>
 								<optgroup label="Ensino Fundamental">
     								<option value="6">6º</option>
@@ -173,181 +173,57 @@ require_once "App/regCadastro.php";
 							</select>
                     </label>
                     <div class="cadastro">
-                    	<button type="button"  name="send" id="send">Efetuar Cadastro</button>
+                    	<button type="submit"  name="send" id="send">Efetuar Cadastro</button>
                     </div>
                   </fieldset> 
                   </div>
                 </form>   
                 <button type="button"  data-toggle="modal" id="model" style="display:none;" data-target="#myModal"></button>
-                    <!-- Modal-->
-                <div class="container">
-                  <!-- Trigger the modal with a button -->
-                  <!-- Modal -->
-                  <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close close-modal" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body" id="formularioQuestao" style="position: relative; padding: 15px; margin: -124px 136px; height: 700px;">
-                          <p>This is a large modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger close-modal" name="fechar" id="fechar" >Fechar</button>
-                          <button type="button" class="btn btn-warning" name="enviar" id="proximo" >Proximo</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 
       </div>
     </div>
   </div>
 </section>
 <script type="text/javascript">
-         $("#send").click(function(){
-             
-             
-             
-             var nome = $("#nome").val();
-             var fone = $("#fone").val();
-             var mail = $("#mail").val();
-             var cidade = $("#cidade").val();
-             var serie = $("#serie").val();
-             
-             if(nome == '' || fone == '' || mail == '' || cidade == '' || serie == '' ){
-                                         
-                                         
-                                        
+    $(document).ready( function() {
 
-                                        //$("#myModal").ready(function(){
-                                            //$('#myModal').modal('show');
-                           
-                       //});
-                 alert("Atenção! Preencha todos os campos");
-             }else{
-                $.ajax({
-                    url:'App/regCadastro.php',
-                    type:'POST',
-                    data: {nome:nome, fone:fone, email:mail, cidade:cidade,serie:serie},
-                    success:function(r){
-                       if(swal ( " Bom trabalho! " , " Você clicou no botão! " , " sucesso ")){
-                            $("#model").trigger('click');
-                       }
-                    }
-                });
-             }
-      
-
-        
-    });
-
-    $(".close-modal").click(function(){
-        location.href="cadastro.php";
-    });
-    
-    count = 1
-    
-    $("#send").click(function(){
-      var id = 1;
-                count++;
-        $.ajax({
-            url:'App/regQuestao.php',
-            type:'GET',
-            data: {cont:id},
-            success:function(r){
-               $("#formularioQuestao").html(r);
-            }
-        });
-        
-        if(id > 14)
-            //swal ( " Bom trabalho! Voce deseja visualizar seu resultado? " , " O resultado tambem foi encaminhado para a sua caixa postal,  " , " sucesso ");
-            //$("#model").trigger('click');
-            
-            location.href="resultado.php";
-        
-    });
-    
-        count = 1
-    
-    $("#proximo").click(function(){
-      var id = count;
-                count++;
-        $.ajax({
-            url:'App/regQuestao.php',
-            type:'GET',
-            data: {cont:id},
-            success:function(r){
-               $("#formularioQuestao").html(r);
-            }
-        });
-        
-        if(id > 15)
-            location.href="resultado.php";
-        
-    });
-    
-    $("#proximo").click(function(){
-        
-        var var_name = $("input[name='op']:checked").val();
-   
-        $.ajax({
-            url:'App/resultado.php',
-            type:'GET',
-            data: {letra:var_name},
-            success:function(r){
-               //alert(r);
-            }
-        });
-     
-    });
-
-
-//swal-button--confirm
-
-//Validação Formulario
-$(document).ready( function() {
-  $("#formularioContato").validate({
-    // Define as regras
-    rules:{
-      nome:{
-        // campoNome será obrigatório (required) e terá tamanho mínimo (minLength)
-        required: true, minlength: 2
-      },
-      mail:{
-        // campoEmail será obrigatório (required) e precisará ser um e-mail válido (email)
-        required: true, email: true
-      },
-      fone:{
-        // campoMensagem será obrigatório (required) e terá tamanho mínimo (minLength)
-        required: true, minlength: 8
-      }
-    },
-    // Define as mensagens de erro para cada regra
-    messages:{
-      nome:{
-        required: "Digite o seu nome",
-        minLength: "O seu nome deve conter, no mínimo, 2 caracteres"
-      },
-      mail:{
-        required: "Digite o seu e-mail para contato",
-        email: "Digite um e-mail válido"
-      },
-      fone:{
-        required: "Digite o seu telefone",
-        minLength: "Digite um telefone válido"
-      }
     }
-  });
-});
+    // Evento que é executado ao clicar no botão de enviar
+        document.getElementById("send").onclick = function(e) {
+            validarcampos();
 
+            var nome = $("#nome").val();
+            var fone = $("#fone").val();
+            var mail = $("#mail").val();
+            var cidade = $("#cidade").val();
+            var serie = $("#serie").val();
 
+            $.ajax({
+                url:'App/regCadastro.php',
+                type:'POST',
+                data: {nome:nome, fone:fone, email:mail, cidade:cidade,serie:serie},
+                // success:function(r){
+                //     if(swal ( " Bom trabalho! " , " Você clicou no botão! " , " sucesso ")){
+                //         $("#model").trigger('click');
+                //     }
+                // }
+            });
 
-    $(document).ready(function () { 
+            e.preventDefault();
+
+    };
+
+    //Validação Formulario
+    function validarcampos() {
+      $("#formularioContato").validate({
+
+    };
+
+    $(document).ready(function () {
                 var $seuCampoData = $(".fone");
                 $seuCampoData.mask('00/00/0000', {reverse: true});
-            });
+    });
+
 </script>
 <!--==============================
               footer
