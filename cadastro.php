@@ -6,8 +6,8 @@ require_once "App/regCadastro.php";
 <title>Faça seu cadastro para fazer o teste vocacional </title>
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="icon" href="images/favicon.ico">
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/logo_icone.png">
+<link rel="shortcut icon" href="images/logo_icone.png" />
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="js/sweetalert2.min.css">
