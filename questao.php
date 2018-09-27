@@ -34,7 +34,7 @@ endif;
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <title>- Teste vocacional -  </title>
     <meta charset="utf-8">
@@ -213,8 +213,8 @@ endif;
     <div class="container">
         <div class="row">
             <div class="grid_12">
-                <div class="copyright"><span class="brand"><strong>UNIDESC</strong></span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a>
-                    <div class="sub-copy">TURMA <strong> SISTEMAS DE INFORMAÇÂO <strong></strong><a href="http://www.templatemonster.com/" rel="nofollow"> 4� e 6�</a></div>
+                <div class="copyright"><span class="brand">UNIDESC</span> &copy; <span id="copyright-year"></span>
+                    <div class="sub-copy">SISTEMAS DE INFORMAÇÃO <a  rel="nofollow">4º e 6º semestre</a></div>
                 </div>
             </div>
         </div>
@@ -222,4 +222,4 @@ endif;
 </footer>
 <a href="#" id="toTop" class="fa fa-chevron-up"></a>
 </body>
-</html>
+</html></html>

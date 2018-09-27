@@ -17,7 +17,7 @@
 	 endif;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Faça seu cadastro para fazer o teste vocacional </title>
 <meta charset="utf-8">
