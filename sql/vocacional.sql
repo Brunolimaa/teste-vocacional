@@ -1,175 +1,66 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tempo de Geração: 17/09/2018 às 19:51
--- Versão do servidor: 5.5.53-0ubuntu0.14.04.1
--- Versão do PHP: 5.5.9-1ubuntu4.20
+-- Host: localhost
+-- Generation Time: 25-Set-2018 às 02:34
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "-03:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `vocacional`
+-- Database: `vocacional`
 --
+CREATE DATABASE IF NOT EXISTS `vocacional` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `vocacional`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `candidato`
+-- Estrutura da tabela `candidato`
 --
 
-CREATE TABLE IF NOT EXISTS `candidato` (
-  `cand_id` int(11) NOT NULL AUTO_INCREMENT,
-  `cand_nome` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_serie` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_tel` varchar(22) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `resultado_curso` varchar(700) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_cidade` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_date` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `ip_visitante` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`cand_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=115 ;
-
---
--- Fazendo dump de dados para tabela `candidato`
---
-
-INSERT INTO `candidato` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`, `ip_visitante`) VALUES
-(19, 'Gabriela Lima dos Santos', 'gabriela_lima01@hotmail.com', 'concluido', '6183384991', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Samambaia ', '2016 - 26 ', ''),
-(20, 'Ntália Moura Martins', 'pedro.moura39@gmail.com', '3', '061998742172', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Samambaia ', '2016 - 26 ', ''),
-(17, 'heber moreira ', 'hebermoreira@hotmail.com', 'concluido', '36372735', NULL, 'Brasilia', '2016 - 26 ', ''),
-(18, 'wemerson ferreira da costa', 'wemerson.ferreira.77@gmail.com', '3', '061 984463080', NULL, 'São Sebastião ', '2016 - 26 ', ''),
-(15, 'diego vieira', 'diegopindadinho@gmail.com', '3', '91968276', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Novo gama', '2016 - 26 ', ''),
-(16, 'Gabriel Neves da Silva ', 'gabrielnevesgn07@gmail.com', '3', '61 993828710', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Riacho Fundo II ', '2016 - 26 ', ''),
-(10, 'estefany bezerra guimaraes lin', 'eguimaraeslins@gmail.com', '3', '981557839', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Gama', '2016 - 26 ', ''),
-(11, 'igor da silva pereira', 'iidduzinho@hotmail.com', '3', '61995687610', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Valparaiso', '2016 - 26 ', ''),
-(12, 'Elvis Jhonny Melo Oliveira', 'elvis66195781@outlook.com', '3', '61 99534-8730', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'Novo gama', '2016 - 26 ', ''),
-(13, 'Ivana de Jesus Cavalcante', 'ivanacavalcante99@gmail.com', '3', '61986051622', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Gama', '2016 - 26 ', ''),
-(14, 'victor Daniel Silva', 'vd39709@gmail.com', '3', '92553158', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Novo gama', '2016 - 26 ', ''),
-(8, 'Alécio Filipe', 'aleciofilipe@gmail.com', 'concluido', '99844369', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'Brasilia', '2016 - 26 ', ''),
-(21, 'jessica larissa', 'jessicalarissa20@hotmail.com', '7', '61994014462', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Sobradinho', '2016 - 26 ', ''),
-(22, 'lucas nunes de santana', 'lucasriuga@hotmail.com', 'concluido', '6195460300', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'CeilAndia', '2016 - 26 ', ''),
-(23, 'Gabriela pereira da Mota Arrud', 'gabrielapereirap1996@gmail.com', 'concluido', '994292407', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'Recanto das Emas ', '2016 - 26 ', ''),
-(24, 'Marilia Borba Valverde', 'marilia.borba36@gmail.com', 'concluido', '93136668', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Planaltina ', '2016 - 26 ', ''),
-(25, 'Maria de Nazaré Santos Reis', 'maria_santosreis@hotmail.com', 'concluido', '92233332', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Planaltina ', '2016 - 26 ', ''),
-(26, 'Ednilton Barbosa de Castro', 'Edniltonbarbosa75@gmail.com', 'concluido', '61 985151394', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'CeilAndia', '2016 - 26 ', ''),
-(27, 'caliandra tonhá da silva', 'caliandra929@gmail.com', 'concluido', '992275365', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Taguatinga', '2016 - 26 ', ''),
-(28, 'Regina dos santos mendes', 'relindinhadmais@gmail.com', 'concluido', '85083589', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Brazlândia', '2016 - 26 ', ''),
-(29, 'heber moreira ', 'hebermoreiradossantos@hotmail.', 'concluido', '36372735', NULL, 'Planaltina ', '2016 - 26 ', ''),
-(30, 'fernanda alves da silva', 'fhernandaaalves53@gmail.com', '2', '61998456890', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'CeilAndia', '2016 - 26 ', ''),
-(31, 'wemerson', 'wemerson.ferrreira.77@gmail.co', '3', '84463080', NULL, 'São Sebastião ', '2016 - 26 ', ''),
-(32, 'Amanda', 'isabellyvitoria22242@gmail.com', 'concluido', '86832733', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Gama', '2016 - 26 ', ''),
-(33, 'carolina oliveira borges ', 'thaisvitoria.b@hotmail.com', '3', '86278357', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Aguas Claras', '2016 - 26 ', ''),
-(34, 'Thais Vitória', 'thaisvitoria.b@hotmail.com', '3', '33566077', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Taguatinga', '2016 - 26 ', ''),
-(35, 'gláucia', 'glaucia.nasciento131@gmail.com', '3', '6136081547', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Novo gama', '2016 - 26 ', ''),
-(36, 'Joyce Faria', 'joycefaria2905@gmail.com', '3', '95522489', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Novo gama', '2016 - 26 ', ''),
-(37, 'Josue Alves Carvalho', 'thaliamelloreis@gmail.com', '3', '91315805', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'Novo gama', '2016 - 26 ', ''),
-(38, 'thalia de melo reis', 'thaliamelloreis@gmail.com', '3', '6195744335', 'Sua maior característica é ser intuitivo, mas, em vez de se preocupar com pessoas, costuma focar seu interesse em grandes áreas do conhecimento, como ciência e tecnologia. Pessoas como você apresentam notável capacidade para identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato. - •	Sistemas de informação - •	Analise e desenvolvimento de sistemas - •	Matemática - •	Banco de dados - •	Rede de computadores - •	Aviação Civil - •	Engenharia de alimentos', 'Novo gama', '2016 - 26 ', ''),
-(39, 'Larisse Soares da Mata', 'larissedamata@outlook.com', '3', '93333111', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Novo gama', '2016 - 26 ', ''),
-(40, 'Larisse Soares da Mata', 'larissedamata@outlook.com', '3', '93333111', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Novo gama', '2016 - 26 ', ''),
-(46, 'wellington dos passos', 'well.passos@hotmail.cm', 'concluido', '92748796', 'Sua maior característica é necessidade de movimento. Pessoas como você apresentam destreza física e boa expressão corporal. Se forem mais propensos ao raciocínio lógico, terão mais êxito em profissões que requeiram precisão e acuidade. Se forem mais inclinados ao sentimento e à emoção, as profissões relacionadas ao trato com pessoas são as mais indicadas. As pessoas desse grupo não gostam de rotina e vêm o trabalho como fonte de prazer. - • Jornalismo - • Publicidade - • Educação Física - • Pedagogo - • Turismo - • Marketing - • Agronomia', 'Luziania', '2016 - 17 ', ''),
-(42, 'teste', 'teste@teste.com.br', 'concluido', '99999999', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Recanto das Emas ', '2016 - 27 ', ''),
-(43, 'Alana Tayná Aquino Sampaio', 'alanatayna@hotmail.com', '3', '986527262', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Brasilia', '2016 - 27 ', ''),
-(44, 'Thais Evelin Rocha Pires de so', 'alanatayna@hotmail.com', '3', '61994010867', 'Sua maior característica é seu entusiasmo e interesse nas relações humanas. Pessoas como você têm na intuição o seu ponto forte. Muitas endereçam seu esforço e talento para o desenvolvimento intelectual de alunos e discípulos e o conforto psicológicos  ou físico de pacientes e colegas de trabalho. - •	Psicologia - •	Letras - •	Enfermagem - •	Fisioterapia - •	Medicina veterinária - •	Radiologia', 'Brasilia', '2016 - 27 ', ''),
-(47, 'Bruno Pereira de Lima', 'br_lima@live.com', 'concluido', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Luziania', '2016 - 29 ', '10.240.1.32'),
-(50, 'Bruno Lima', 'br_lima@live.com', 'concluido', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'CeilAndia', '2017 - 26 ', '10.240.1.32'),
-(48, 'eu', 'meu@email.com', '7', '99999999', 'Sua maior característica é a capacidade de comandar e assumir responsabilidades. Pessoas como você gostam de lidar com fatos, quantidades, análises, organização e planejamento. Trabalham duro e preferem profissões que lhes proporcionem status e possibilidade de crescimento. São as mais presentes no mundo corporativo. - • Administração - • direito - • Engenharia civil - •	ciências contábeis - •	Gestão de recursos humanos - •	Gestão ambiental - •	Farmácia - •	Gestão Financeira - •	Tecnologia em construção de edificios - •	Biomedicina - •	Odontologia', 'Luziania', '2017 - 03 ', ''),
-(49, 'Bruno Lima', 'br_lima@live.com', 'concluido', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'GuarÃ¡ ', '2017 - 26 ', '10.240.1.32'),
-(51, 'teste 4', 'br_lima@live.com', 'concluido', '919634630', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'ParanoÃ¡', '2017 - 26 ', '10.240.1.32'),
-(52, 'Bruno Lima', 'asd@lima.com.br', '2', '91963430', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Planaltina ', '2017 - 26 ', ''),
-(53, 'Lima', 'br_lima@live.com', '2', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'NÃºcleo Bandeirante', '2017 - 26 ', '10.240.1.32'),
-(54, 'Ana Carolina Cintra Faria', 'anacarolina.cintrafaria@gmail.', '3', '61983243483', NULL, 'Valparaiso', '2017 - 27 ', ''),
-(55, 'aluni', 'br_lima@live.com', '1', '5645645645656', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Planaltina ', '2017 - 27 ', '10.240.1.32'),
-(56, 'asd', 'br_lima@live.com', '3', '23423423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'ParanoÃ¡', '2017 - 27 ', '10.240.1.32'),
-(57, 'sadasd', 'br_lima@live.com', '1', '4323423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'NÃºcleo Bandeirante', '2017 - 27 ', '10.240.1.32'),
-(58, 'teste', 'br_lima@live.com', 'concluido', '123511111', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'GuarÃ¡ ', '2017 - 27 ', '10.240.1.32'),
-(61, 'brbr', 'br_lima@live.com', '6', '9999999', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'GuarÃ¡ ', '2017 - 27 ', '10.240.1.32'),
-(60, 'br', 'br_lima@live.com', '6', '23432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'GuarÃ¡ ', '2017 - 27 ', '10.240.1.32'),
-(59, 'teste', 'br_lima@live.com', '6', '2423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Samambaia ', '2017 - 27 ', '10.240.1.32'),
-(62, 'brrbrbrghr', 'br_lima@live.com', '6', '9999999', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Valparaiso', '2017 - 27 ', '10.240.1.32'),
-(63, 'Bruno Teste', 'conect@gmail.com', 'concluido', '91963463', '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n - Sistemas de Informação - Análise e desenvolvimento de Sistema - Química - Farmácia - Física', 'Valparaiso', '2017 - 27 ', ''),
-(64, 'lima teste', 'conect@gmail.com', '7', '919634111', '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n - Sistemas de Informação - Análise e desenvolvimento de Sistema - Química - Farmácia - Física', 'Valparaiso', '2017 - 27 ', ''),
-(65, 'teste 432423423', 'br_lima@live.com', '7', '54353453453', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Novo gama', '2017 - 27 ', '10.240.1.32'),
-(66, 'ggggggggg', 'br_lima@live.com', '6', '3432423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Novo gama', '2017 - 27 ', '10.240.1.32'),
-(67, 'brbrbr', 'br_lima@live.com', '7', '991999999', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Novo gama', '2017 - 27 ', '10.240.1.32'),
-(68, 'asdasdas', 'br_lima@live.com', '6', '23423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Novo gama', '2017 - 27 ', '10.240.1.32'),
-(74, 'mais um teste', 'br_lima@live.comasdasdas', '6', '9595', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Samambaia ', '2017 - 27 ', ''),
-(72, 'Bruno Lima', 'br_lima@live.com', '7', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(69, '123123132asdasdas', 'conect@gmail.com', '6', '23423', '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n - Sistemas de Informação - Análise e desenvolvimento de Sistema - Química - Farmácia - Física', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', ''),
-(70, 'Lima234324', 'br_lima@live.com', '7', '32423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Samambaia ', '2017 - 27 ', '10.240.1.32'),
-(71, 'teste definitivo', 'br_lima@live.com', '7', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'NÃºcleo Bandeirante', '2017 - 27 ', '10.240.1.32'),
-(73, 'testeVocacional', 'br_lima@live.comasdasdas', '6', '66565656565', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Samambaia ', '2017 - 27 ', ''),
-(75, 'asdasdasd34234234', 'br_lima@live.com', '7', '45645', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Samambaia ', '2017 - 27 ', '10.240.1.32'),
-(107, 'teste', 'br_lima@live.com', '2', '2423423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'ParanoÃ¡', '2017 - 28 ', '10.240.1.32'),
-(76, 'Lima', 'reter@gmail.com', '7', '23423423', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', ' Santa Maria  ', '2017 - 27 ', ''),
-(77, 'sdasdas', 'br_lima@live.comasdasdas', 'concluido', '3432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'NÃºcleo Bandeirante', '2017 - 27 ', ''),
-(78, 'sdasdas', 'br_lima@live.comasdasdas', 'concluido', '3432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'NÃºcleo Bandeirante', '2017 - 27 ', ''),
-(79, 'sdasdas', 'br_lima@live.comasdasdas', 'concluido', '3432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'NÃºcleo Bandeirante', '2017 - 27 ', ''),
-(80, 'sdasdas', 'br_lima@live.comasdasdas', 'concluido', '3432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'NÃºcleo Bandeirante', '2017 - 27 ', ''),
-(81, 'asdasda', 'br_lima@live.comasdasdas', '6', 'd23423', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', ''),
-(82, 'Br', 'br_lima@live.comasdasdas', '7', '23423', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Samambaia ', '2017 - 27 ', '');
-INSERT INTO `candidato` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`, `ip_visitante`) VALUES
-(83, 'teste BR', 'br_lima@live.comasdasdas', '6', '3432423432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Recanto das Emas ', '2017 - 27 ', ''),
-(84, 'teste BR', 'br_lima@live.comasdasdas', '6', '3432423432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Recanto das Emas ', '2017 - 27 ', ''),
-(85, 'teste BR', 'br_lima@live.comasdasdas', '6', '3432423432', '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p> - Direito - Enfermagem - Psicologia  - Pedagogia - Fisioterapia - Letras - <hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n - Trabalho soci', 'Recanto das Emas ', '2017 - 27 ', ''),
-(86, 'asdasd432534534', 'br_lima@live.com', '7', 'br', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Planaltina ', '2017 - 27 ', '10.240.1.32'),
-(87, 'asdasd432534534', 'br_lima@live.com', '7', 'br', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Planaltina ', '2017 - 27 ', '10.240.1.32'),
-(88, 'br', 'br_lima@live.com', '6', '23423432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(89, 'Bruno Lima', 'br_lima@live.com', '7', '999999', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Recanto das Emas ', '2017 - 27 ', '10.240.1.32'),
-(90, 'Bruno Lima', 'br_lima@live.com', '7', '21342423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(91, 'Bruno Lima', 'br_lima@live.com', '8', '91934330', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'ParanoÃ¡', '2017 - 27 ', '10.240.1.32'),
-(92, 'Bruno Lima', 'br_lima@live.com', 'concluido', '23432423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(93, 'teste', 'br_lima@live.com', '6', '23432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(94, '', '', '', '', NULL, '', '2017 - 27 ', ''),
-(95, '', '', '', '', NULL, '', '2017 - 27 ', ''),
-(96, 'Bruno Teste Lima', 'br_lima@live.com', '2', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'NÃºcleo Bandeirante', '2017 - 27 ', '10.240.1.32'),
-(97, 'sadsada', 'br_lima@live.com', '7', '23432432423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(98, 'Lima teste', 'br_lima@live.com', '6', '534534534', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(99, 'Lima teste', 'br_lima@live.com', '6', '534534534', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(100, 'Br', 'br_lima@live.com', '7', '2321312', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', ' Santa Maria  ', '2017 - 27 ', '10.240.1.32'),
-(101, '3243sfdfsd', 'br_lima@live.com', '6', '3432423423', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Samambaia ', '2017 - 27 ', '10.240.1.32'),
-(102, 'sdasdas', 'br_lima@live.com', '6', '45345', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(103, 'Bruno Lima', 'br_lima@live.com', '7', '543534534', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(104, 'Bruno Lima', 'br_lima@live.com', '7', '32423432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 27 ', '10.240.1.32'),
-(105, 'brbrbr', 'br_lima@live.com', '6', '23423432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Recanto das Emas ', '2017 - 27 ', '10.240.1.32'),
-(106, 'brbrbr', 'br_lima@live.com', '6', '23423432', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Recanto das Emas ', '2017 - 27 ', '10.240.1.32'),
-(108, 'lima', 'conecthousee@gmail.com', 'concluido', '232423432423', '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n - Sistemas de Informação - Análise e desenvolvimento de Sistema - Química - Farmácia - Física', 'NÃºcleo Bandeirante', '2017 - 28 ', ''),
-(109, 'Bruno Pereira de Lima', 'br_lima@live.com', '6', '324324324', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'Recanto das Emas ', '2017 - 28 ', '10.240.1.32'),
-(111, 's', 'dsfsdfsd', '2', '2342', '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É objetivo, lógico e evita situações ambíguas. Possui interesse em atividades físicas, mecânicas que exijam destreza e força ou em atividades manuais como construção, reparo, culinária e cirurgia. Gosta de resolver problemas concretos, com resultados tangíveis. Valoriza, acima de tudo, os fatos. Pode ser pouco sociável e carecer de habilidade  interpessoal, evitando  situações ambíguas e  muito subjetivas. Mostra-se  mais reservado e inflexível.</p>\n\n - Agronomia - Educação Física - Gestão ambiental - Engenharia Civil - Medicina Veterinária', 'NÃºcleo Bandeirante', '2017 - 28 ', '10.240.0.69'),
-(110, 'Bruno', 'br_lima@live.com', '8', '3242342', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 28 ', '10.240.1.32'),
-(112, 'Bruno Lima', 'br_lima@live.com', 'concluido', '91963430', '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n - Ciências Contábeis - Matemática - Administração - <hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'SÃ£o SebastiÃ£o ', '2017 - 28 ', '10.240.1.32'),
-(113, 'teste', 'teste@teste', '2', '342423423432', NULL, 'NÃºcleo Bandeirante', '2018 - 08 ', ''),
-(114, 'Jefson David', 'jefsondavid@gmail.com', 'concluido', '61999037500', NULL, 'Luziania', '2018 - 08 ', '');
+CREATE TABLE `candidato` (
+  `cand_id` int(11) NOT NULL,
+  `cand_nome` varchar(30) NOT NULL,
+  `cand_email` varchar(30) NOT NULL,
+  `cand_serie` varchar(30) NOT NULL,
+  `cand_tel` varchar(22) NOT NULL,
+  `resultado_curso` varchar(700) NOT NULL,
+  `cand_cidade` varchar(200) NOT NULL,
+  `cand_date` varchar(20) NOT NULL,
+  `ip_visitante` varchar(15) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `candidatoUNIDESC`
+-- Estrutura da tabela `candidatoUNIDESC`
 --
 
-CREATE TABLE IF NOT EXISTS `candidatoUNIDESC` (
-  `cand_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `candidatoUNIDESC` (
+  `cand_id` int(11) NOT NULL,
   `cand_nome` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cand_email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cand_serie` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cand_tel` varchar(22) COLLATE utf8_unicode_ci DEFAULT NULL,
   `resultado_curso` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cand_cidade` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cand_date` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`cand_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=692 ;
+  `cand_date` varchar(10) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Fazendo dump de dados para tabela `candidatoUNIDESC`
+-- Extraindo dados da tabela `candidatoUNIDESC`
 --
 
 INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`) VALUES
@@ -409,7 +300,7 @@ INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_seri
 (259, 'Silas Henrique Quintino dos Sa', 'Silashenrique_13@homail.com', '3', '93345327', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Valparaiso', '2016 - 28 '),
 (260, 'Rômulo Luis Cavalcante Gomes', 'romulocavalcante10@gmail.com', '3', '84228057', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Valparaiso', '2016 - 28 '),
 (261, 'Everton meneses araujo', 'everton.meneses@outlook.com', '3', '84228057', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Valparaiso', '2016 - 28 '),
-(262, 'João D''Avila', 'joao.davila@hotmail.com', '3', '56985876', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
+(262, 'João D\'Avila', 'joao.davila@hotmail.com', '3', '56985876', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
 (263, 'Mateus Felipe Torquato Dias', 'fmateus852@gmail.com', '3', '93161587', 'Redes de Computadores - Analise e desenvolvimento de sistemas - Matemática - Banco de dados - Direito', 'Ocidental', '2016 - 28 '),
 (264, 'Lia Gabriele ', 'souliagabriele@hotmail.com', '3', '82998879', 'Sistemas de Informação - Educação Física - Enfermagem - Fisioterapia - Medicina Veterinaria', 'Ocidental', '2016 - 28 '),
 (265, 'Ana Flávia Rodrigues Mendes', 'anaflaviarmn25@hotmail.com', '3', '92592821', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Ocidental', '2016 - 28 '),
@@ -423,13 +314,13 @@ INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_seri
 (273, 'Amanda Ariel ', 'arielamandat@gmail.com', '3', '84373035', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Ocidental', '2016 - 28 '),
 (274, 'levi', 'leviborges98@gamil.com', '3', '95677363', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Ocidental', '2016 - 28 '),
 (275, 'Ana Flávia Rodrigues Mendes', 'anaflaviarmn25@hotmail.com', '3', '92592821', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Ocidental', '2016 - 28 '),
-(276, 'Cléber Vinícius Chagas de Souz', 'cleber.vinicius468@gmail.com', '3', '86322884', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 ');
-INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`) VALUES
+(276, 'Cléber Vinícius Chagas de Souz', 'cleber.vinicius468@gmail.com', '3', '86322884', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
 (277, 'Charles', 'fcfrfcfr@gmail.com', '3', '99931275', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
 (278, 'Giovanna Alves', 'gihoran58@gmail.com', '3', '93497676', 'Sistemas de Informação - Educação Física - Enfermagem - Fisioterapia - Medicina Veterinaria', 'Ocidental', '2016 - 28 '),
 (279, 'Felipe', 'felipeaquinosorato@gmail.com', '3', '82867561', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Ocidental', '2016 - 28 '),
 (280, 'rebeca da silva santos', 'rebeccasylva@gmail.com', '3', '95276159', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
-(281, 'barbara', 'barbara.menezes4554@gmail.com', '3', '92488778', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Valparaiso', '2016 - 28 '),
+(281, 'barbara', 'barbara.menezes4554@gmail.com', '3', '92488778', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Valparaiso', '2016 - 28 ');
+INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`) VALUES
 (282, 'Alyce Alcântara', 'alyce-linda@hotmail.com', '3', '92420943', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
 (283, 'Alex Cardoso', 'alex.cardozo100@gmail.com', '3', '98767441', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
 (284, 'isabela silva rocha', 'alex.cardozo100@gmail.com', '3', '98767441', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Ocidental', '2016 - 28 '),
@@ -673,8 +564,7 @@ INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_seri
 (527, 'balbia batista martins', 'balbiamartins@gmail.com', '3', '84857557', 'Sistemas de Informação - Educação Física - Enfermagem - Fisioterapia - Medicina Veterinaria', 'Luziânia', '2016 - 28 '),
 (528, 'Barbara Adelaine Vieira', 'barbaraadelaine20@gmail.com', '3', '99822970', 'Redes de Computadores - Analise e desenvolvimento de sistemas - Matemática - Banco de dados - Direito', 'Luziânia', '2016 - 28 '),
 (529, 'fernanda desouza', 'Ferandafernades449_@gmail.com', '3', '92599216', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Luziânia', '2016 - 28 '),
-(530, 'relbe pereira da silva ', 'd.debora@outlook.com', '3', '92407792', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Luziânia', '2016 - 28 ');
-INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`) VALUES
+(530, 'relbe pereira da silva ', 'd.debora@outlook.com', '3', '92407792', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Luziânia', '2016 - 28 '),
 (531, 'Barbara Adelaine Vieira', 'barbaraadelaine20@gmail.com', '3', '99822970', 'Redes de Computadores - Analise e desenvolvimento de sistemas - Matemática - Banco de dados - Direito', 'Luziânia', '2016 - 28 '),
 (532, 'joao divino fernandes de arauj', 'alvesedimar016@gmail.com', '3', '36225420', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Luziânia', '2016 - 28 '),
 (533, 'lindomar', 'lindomarpereira9@hotmail.com', '3', '99182427', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Luziânia', '2016 - 28 '),
@@ -683,7 +573,8 @@ INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_seri
 (536, 'edson martins de sousa', 'edsonmartins.sousa@gmail.com', '3', '22384883', 'Redes de Computadores - Analise e desenvolvimento de sistemas - Matemática - Banco de dados - Direito', 'Luziânia', '2016 - 28 '),
 (537, 'cleuvania', 'cleuvaniasantos@outlook.com', '3', '86169023', 'Sistemas de Informação - Educação Física - Enfermagem - Fisioterapia - Medicina Veterinaria', 'Luziânia', '2016 - 28 '),
 (538, 'thiago siqueira', 'thiagosiqueira.adm@hotmail.com', 'concluido', '91629550', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Luziânia', '2016 - 28 '),
-(539, 'michele santos da luz', 'thiagosiqueira.adm@hotmail.com', '3', '94392402', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Luziânia', '2016 - 28 '),
+(539, 'michele santos da luz', 'thiagosiqueira.adm@hotmail.com', '3', '94392402', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Luziânia', '2016 - 28 ');
+INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_serie`, `cand_tel`, `resultado_curso`, `cand_cidade`, `cand_date`) VALUES
 (540, 'wesley pereira de santana', 'wesleyp20162016@gmail.com', '3', '91705669', 'Sistemas de Informação - Educação Física - Enfermagem - Fisioterapia - Medicina Veterinaria', 'Luziânia', '2016 - 28 '),
 (541, 'manoel gomes da silva', 'emanuelgomes544@gmail.com', '3', '95893587', 'Administração - Redes de Computadores - Engenharia civil - Ciências contábeis - Analista de Sistemas - Farmacia', 'Luziânia', '2016 - 28 '),
 (542, 'thiago siqueira', 'thiagosiqueira.adm@hotmail.com', 'concluido', '91629550', 'Direito - Sistemas de Informação - Letras - Pedagogo - Banco de Dados - Agronomia', 'Luziânia', '2016 - 28 '),
@@ -795,40 +686,39 @@ INSERT INTO `candidatoUNIDESC` (`cand_id`, `cand_nome`, `cand_email`, `cand_seri
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `Curso`
+-- Estrutura da tabela `Curso`
 --
 
-CREATE TABLE IF NOT EXISTS `Curso` (
+CREATE TABLE `Curso` (
   `curs_id` int(11) NOT NULL,
   `curs_descricao` varchar(700) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `grupo` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`curs_id`)
+  `grupo` varchar(1) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Fazendo dump de dados para tabela `Curso`
+-- Extraindo dados da tabela `Curso`
 --
 
 INSERT INTO `Curso` (`curs_id`, `curs_descricao`, `grupo`) VALUES
-(1, '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É objetivo, lógico e evita situações ambíguas. Possui interesse em atividades físicas, mecânicas que exijam destreza e força ou em atividades manuais como construção, reparo, culinária e cirurgia. Gosta de resolver problemas concretos, com resultados tangíveis. Valoriza, acima de tudo, os fatos. Pode ser pouco sociável e carecer de habilidade  interpessoal, evitando  situações ambíguas e  muito subjetivas. Mostra-se  mais reservado e inflexível.</p>\n\n', 'A'),
+(1, '<strong>Característica: </strong> Realista <hr/>\n<p class=\"tituloResultado\"> É objetivo, lógico e evita situações ambíguas. Possui interesse em atividades físicas, mecânicas que exijam destreza e força ou em atividades manuais como construção, reparo, culinária e cirurgia. Gosta de resolver problemas concretos, com resultados tangíveis. Valoriza, acima de tudo, os fatos. Pode ser pouco sociável e carecer de habilidade  interpessoal, evitando  situações ambíguas e  muito subjetivas. Mostra-se  mais reservado e inflexível.</p>\n\n', 'A'),
 (2, 'Agronomia', 'A'),
 (3, 'Educação Física', 'A'),
 (4, 'Gestão ambiental', 'A'),
 (5, 'Engenharia Civil', 'A'),
 (6, 'Medicina Veterinária', 'A'),
-(9, '<strong>Característica: </strong> Realista <hr/>\n<p class="tituloResultado"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n', 'B'),
+(9, '<strong>Característica: </strong> Realista <hr/>\n<p class=\"tituloResultado\"> É analítico, curioso, autocentrado, podendo até aparentar certa frieza. Possui interesse em atividades acadêmicas, teóricas e/ou científicas. Com seu senso crítico aguçado, gosta de resolver problemas abstratos que desafiam o intelecto. Valoriza o estudo, a pesquisa e a reflexão.  Pode se sentir  desconfortável diante de emoções intensas, mas é aberto a questões subjetivas e abstratas.  Prefere atividades teóricas e autônomas  o que o torna mais independente com  relação a vínculos grupais e mais centrado em si mesmo. </p>\n', 'B'),
 (10, 'Sistemas de Informação', 'B'),
 (11, 'Análise e desenvolvimento de Sistema', 'B'),
 (12, 'Química', 'B'),
 (13, 'Farmácia', 'B'),
 (14, 'Física', 'B'),
 (15, '<hr/><strong>Áreas afins:</strong> <hr/>Cursos que envolvam a pesquisa e a investigação científica</strong>', 'B'),
-(21, '<strong>Característica: </strong> Convencional <hr/>\n<p class="tituloResultado"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n', 'C'),
+(21, '<strong>Característica: </strong> Convencional <hr/>\n<p class=\"tituloResultado\"> É organizado, detalhista, conservador e disciplinado. Respeita regras e é considerado confiável. Possui interesse em atividades que exijam planejamento, método, ou envolvam medição, cálculo e dinheiro. Prefere resolver problemas estruturados. Valoriza a rotina e a segurança. Tende a controlar os afetos e a sentir-se à vontade ao desenvolver atividades rotineiras e sistematizadas.</p>\n  \n', 'C'),
 (22, 'Ciências Contábeis', 'C'),
 (23, 'Matemática', 'C'),
 (24, 'Administração', 'C'),
 (25, '<hr/><strong>Áreas afins:</strong> <hr/>Atividades de envolvam organização e estabilidade</strong>\n', 'C'),
-(28, '<strong>Característica: </strong> Artístico<hr/>\n<p class="tituloResultado">  É intuitivo, sonhador, aberto a experiências e foge das convenções sociais. Possui percepção aguçada e interesse em atividades que envolvam imaginação, beleza, produção artística ou inovação. Gosta de se expressar através de meios como música, teatro, dança, desenho, poesia e canto. Valoriza o prazer e as emoções. Aprecia o contato interpessoal, quando está seguro de poder expressar-se livremente.  É aberto a estímulos subjetivos e emocionais, capaz de perceber as reações das pessoas através de compreensão empática.</p>', 'D'),
+(28, '<strong>Característica: </strong> Artístico<hr/>\n<p class=\"tituloResultado\">  É intuitivo, sonhador, aberto a experiências e foge das convenções sociais. Possui percepção aguçada e interesse em atividades que envolvam imaginação, beleza, produção artística ou inovação. Gosta de se expressar através de meios como música, teatro, dança, desenho, poesia e canto. Valoriza o prazer e as emoções. Aprecia o contato interpessoal, quando está seguro de poder expressar-se livremente.  É aberto a estímulos subjetivos e emocionais, capaz de perceber as reações das pessoas através de compreensão empática.</p>', 'D'),
 (29, 'Arquitetura', 'D'),
 (30, 'Artes Cênicas', 'D'),
 (31, 'Artes Plásticas', 'D'),
@@ -842,7 +732,7 @@ INSERT INTO `Curso` (`curs_id`, `curs_descricao`, `grupo`) VALUES
 (39, 'Música', 'D'),
 (40, 'Publicidade e Propaganda', 'D'),
 (41, 'Estética', 'D'),
-(42, '<strong>Característica: </strong> Social<hr/>\n<p class="tituloResultado">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p>', 'E'),
+(42, '<strong>Característica: </strong> Social<hr/>\n<p class=\"tituloResultado\">É comunicativo, interativo, solidário e bom mediador de conflitos. Possui interesse em atender demandas sociais, mobilizar, ensinar, tratar e orientar pessoas. Valoriza o direito e o bem estar alheio, assim como o trabalho em equipe.  Manifesta sensibilidade e responsabilidade na busca de auxiliar,  orientar, tratar e resolver as dificuldades dos outros. Gosta de se sentir aceito e respeitado em suas atividades, ter a atenção para si através de seu jeito expansivo. </p>', 'E'),
 (43, 'Direito', 'E'),
 (44, 'Enfermagem', 'E'),
 (45, 'Psicologia ', 'E'),
@@ -851,7 +741,7 @@ INSERT INTO `Curso` (`curs_id`, `curs_descricao`, `grupo`) VALUES
 (48, 'Letras', 'E'),
 (49, '<hr/><strong>Áreas afins:</strong> <hr/>Demais licenciaturas\n', 'E'),
 (50, 'Trabalho social', 'E'),
-(51, '<strong>Característica: </strong> Empreendedor<hr/>\n<p class="tituloResultado"> É um líder natural: enérgico, persuasivo, competitivo, corajoso e determinado. Gosta de situações novas e desafiadoras. Possui interesse em atividades administrativas e comerciais. Valoriza o sucesso, o poder e o  status. Extrovertido, tem iniciativa e quer assumir a liderança.</p>', 'F'),
+(51, '<strong>Característica: </strong> Empreendedor<hr/>\n<p class=\"tituloResultado\"> É um líder natural: enérgico, persuasivo, competitivo, corajoso e determinado. Gosta de situações novas e desafiadoras. Possui interesse em atividades administrativas e comerciais. Valoriza o sucesso, o poder e o  status. Extrovertido, tem iniciativa e quer assumir a liderança.</p>', 'F'),
 (52, 'Administração de empresas', 'F'),
 (53, 'Gestão de Recursos Humanos', 'F'),
 (54, 'Direito', 'F'),
@@ -860,18 +750,17 @@ INSERT INTO `Curso` (`curs_id`, `curs_descricao`, `grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `CursoUNIDESC`
+-- Estrutura da tabela `CursoUNIDESC`
 --
 
-CREATE TABLE IF NOT EXISTS `CursoUNIDESC` (
-  `curs_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `CursoUNIDESC` (
+  `curs_id` int(11) NOT NULL,
   `curs_descricao` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `grupo` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`curs_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=23 ;
+  `grupo` varchar(1) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Fazendo dump de dados para tabela `CursoUNIDESC`
+-- Extraindo dados da tabela `CursoUNIDESC`
 --
 
 INSERT INTO `CursoUNIDESC` (`curs_id`, `curs_descricao`, `grupo`) VALUES
@@ -901,17 +790,16 @@ INSERT INTO `CursoUNIDESC` (`curs_id`, `curs_descricao`, `grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `questao_enunciado`
+-- Estrutura da tabela `questao_enunciado`
 --
 
-CREATE TABLE IF NOT EXISTS `questao_enunciado` (
-  `ques_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ques_descricao` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`ques_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+CREATE TABLE `questao_enunciado` (
+  `ques_id` int(11) NOT NULL,
+  `ques_descricao` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `questao_enunciado`
+-- Extraindo dados da tabela `questao_enunciado`
 --
 
 INSERT INTO `questao_enunciado` (`ques_id`, `ques_descricao`) VALUES
@@ -934,20 +822,18 @@ INSERT INTO `questao_enunciado` (`ques_id`, `ques_descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `questao_opcoes`
+-- Estrutura da tabela `questao_opcoes`
 --
 
-CREATE TABLE IF NOT EXISTS `questao_opcoes` (
-  `quop_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `questao_opcoes` (
+  `quop_id` int(11) NOT NULL,
   `quop_enunciado_id_enunciado` int(11) NOT NULL,
-  `quop_descricao` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `quop_letra` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`quop_id`),
-  KEY `quop_enunciado_id_enunciado` (`quop_enunciado_id_enunciado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=95 ;
+  `quop_descricao` varchar(500) DEFAULT NULL,
+  `quop_letra` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `questao_opcoes`
+-- Extraindo dados da tabela `questao_opcoes`
 --
 
 INSERT INTO `questao_opcoes` (`quop_id`, `quop_enunciado_id_enunciado`, `quop_descricao`, `quop_letra`) VALUES
@@ -963,7 +849,7 @@ INSERT INTO `questao_opcoes` (`quop_id`, `quop_enunciado_id_enunciado`, `quop_de
 (10, 2, 'd. Procura sentir o clima e  agir  confiando mais em sua  intuição do que na razão.', 'D'),
 (11, 2, 'e. Busca uma solução que seja boa a todos os envolvidos.', 'E'),
 (12, 2, 'f. Sente-se desafiado e  busca soluções para garantir o sucesso da ação.', 'F'),
-(17, 3, 'a. Pode "colocar a mão na massa".', 'A'),
+(17, 3, 'a. Pode \"colocar a mão na massa\".', 'A'),
 (18, 3, 'b. Aprende muito.', 'B'),
 (19, 3, 'c. Oferece  segurança.', 'C'),
 (20, 3, 'd. Pode auxiliar as pessoas.', 'D'),
@@ -1041,6 +927,83 @@ INSERT INTO `questao_opcoes` (`quop_id`, `quop_enunciado_id_enunciado`, `quop_de
 (92, 15, 'd. O contato interpessoal, poder  expressar-se livremente,  perceber as reações e as emoções das pessoas são importantes no trato profissional. ', 'D'),
 (93, 15, 'e.  É necessário ter sensibilidade e responsabilidade  para auxiliar,  orientar e resolver as dificuldades dos outros.', 'E'),
 (94, 15, 'f. Persuadir  as outras pessoas, ter iniciativa e assumir a liderança  são  características do profissional de sucesso.', 'F');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `candidato`
+--
+ALTER TABLE `candidato`
+  ADD PRIMARY KEY (`cand_id`),
+  ADD UNIQUE KEY `candidato_cand_email_uindex` (`cand_email`);
+
+--
+-- Indexes for table `candidatoUNIDESC`
+--
+ALTER TABLE `candidatoUNIDESC`
+  ADD PRIMARY KEY (`cand_id`);
+
+--
+-- Indexes for table `Curso`
+--
+ALTER TABLE `Curso`
+  ADD PRIMARY KEY (`curs_id`);
+
+--
+-- Indexes for table `CursoUNIDESC`
+--
+ALTER TABLE `CursoUNIDESC`
+  ADD PRIMARY KEY (`curs_id`);
+
+--
+-- Indexes for table `questao_enunciado`
+--
+ALTER TABLE `questao_enunciado`
+  ADD PRIMARY KEY (`ques_id`);
+
+--
+-- Indexes for table `questao_opcoes`
+--
+ALTER TABLE `questao_opcoes`
+  ADD PRIMARY KEY (`quop_id`),
+  ADD KEY `quop_enunciado_id_enunciado` (`quop_enunciado_id_enunciado`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `candidato`
+--
+ALTER TABLE `candidato`
+  MODIFY `cand_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `candidatoUNIDESC`
+--
+ALTER TABLE `candidatoUNIDESC`
+  MODIFY `cand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=692;
+
+--
+-- AUTO_INCREMENT for table `CursoUNIDESC`
+--
+ALTER TABLE `CursoUNIDESC`
+  MODIFY `curs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `questao_enunciado`
+--
+ALTER TABLE `questao_enunciado`
+  MODIFY `ques_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `questao_opcoes`
+--
+ALTER TABLE `questao_opcoes`
+  MODIFY `quop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
