@@ -47,7 +47,7 @@ require_once "Candidato.php";
 				}*/
 	//echo $_SESSION['mensagem'];
 //}
-//if(isset($_POST['send'])){
+if(isset($_POST['send'])){
 	$_SESSION['valor'] += isset($_POST['op']) ? $_POST['op'] : "" ;
 }
 if(!empty($_SESSION['candidato'])){
