@@ -43,19 +43,19 @@ if(isset($_POST['finalizar'])):
 endif;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Resultado final</title>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="icon" href="images/favicon.ico">
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/logo_icone.png">
+<link rel="shortcut icon" href="images/logo_icone.png" />
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
-<script src="js/script.js"></script> 
-<script src="js/superfish.js"></script>
+<script src="js/script.js"></script>
+<!--<script src="js/superfish.js"></script>-->
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/tmStickUp.js"></script>
@@ -127,8 +127,8 @@ endif;
         <?php
 			    	echo '<ul>';
 					    foreach($resuFinal as $final){
-					     
-					      		echo '<li>'.$final['curs_descricao'].'</li>';
+
+                            echo '<li>'.utf8_encode($final['curs_descricao']).'</li>';
 					       
 					    } 
 					  echo '</ul>';

@@ -122,32 +122,30 @@ require_once "App/regCadastro.php";
 							
 							<select class="form" name="cidade" id="cidade"  required>
 								<option  value="" selected="selected"  ><a>Selecionar </a></option>
-								<option value="Luziania">Luziânia</option>
-								<option value="Valparaiso">Valparaiso</a></option>
-								<option value="Novo gama"><a>Novo Gama</a></option>
-								<option value="Gama"><a>Gama</a></option>
-								<option value="Brasilia"><a>Brasília</a></option>
-								<option value="Ocidental"><a>Ocidental</a></option>
-								<option value="Aguas Claras"><a>Águas Claras</a></option>
-								<option value="Taguatinga"><a>Taguatinga</a></option>
-								<option value="CeilAndia"><a>Ceilândia</a></option>
-								<option value="Brazlândia"><a>Brazlândia</a></option>								
-								<option value="Sobradinho"><a>Sobradinho </a></option>
-								<option value="Planaltina "><a>Planaltina </a></option>
-								<option value="Paranoá"><a>Paranoá </a></option>
-								<option value="Núcleo Bandeirante"><a>Núcleo Bandeirante</a></option>
-								<option value="Guará "><a>Guará </a></option>
-								<option value="Samambaia "><a>Samambaia </a></option>
-								<option value=" Santa Maria  "><a> Santa Maria  </a></option>
-								<option value="São Sebastião "><a>São Sebastião </a></option>
-								<option value="Recanto das Emas "><a>Recanto das Emas </a></option>
-								<option value=" Lago Sul  "><a> Lago Sul  </a></option>
-								<option value="Riacho Fundo  "><a>Riacho Fundo  </a></option>
-								<option value="Lago Norte "><a>Lago Norte  </a></option>
-								<option value="Candangolândia  "><a>Candangolândia  </a></option>
-								<option value="Riacho Fundo II "><a>Riacho Fundo II </a></option>
-								<option value="Park Way"><a>Park Way </a></option>
-								<option value="Itapoã"><a>Itapoã </a></option>
+                                <option value="Novo gama"> Novo Gama </option>
+                                <option value="Gama"> Gama </option>
+                                <option value="Brasilia"> Brasília </option>
+                                <option value="Ocidental"> Ocidental </option>
+                                <option value="Aguas Claras"> Águas Claras </option>
+                                <option value="Taguatinga"> Taguatinga </option>
+                                <option value="CeilAndia"> Ceilândia </option>
+                                <option value="Brazlândia"> Brazlândia </option>
+                                <option value="Sobradinho"> Sobradinho  </option>
+                                <option value="Planaltina "> Planaltina  </option>
+                                <option value="Paranoá"> Paranoá  </option>
+                                <option value="Núcleo Bandeirante"> Núcleo Bandeirante </option>
+                                <option value="Guará "> Guará  </option>
+                                <option value="Samambaia "> Samambaia  </option>
+                                <option value=" Santa Maria  ">  Santa Maria   </option>
+                                <option value="São Sebastião "> São Sebastião  </option>
+                                <option value="Recanto das Emas "> Recanto das Emas  </option>
+                                <option value=" Lago Sul  ">  Lago Sul   </option>
+                                <option value="Riacho Fundo  "> Riacho Fundo   </option>
+                                <option value="Lago Norte "> Lago Norte   </option>
+                                <option value="Candangolândia  "> Candangolândia   </option>
+                                <option value="Riacho Fundo II "> Riacho Fundo II  </option>
+                                <option value="Park Way"> Park Way  </option>
+                                <option value="Itapoã"> Itapoã  </option>
 								 
 								 
 								
@@ -168,7 +166,7 @@ require_once "App/regCadastro.php";
     								<option value="1">1º</option>
     								<option value="2">2º</option>
     								<option value="3">3º</option>
-    								<option value="concluido">concluido</option>
+                                    <option value="concluido">Concluído</option>
   								</optgroup>
 							</select>
                     </label>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Faça seu teste vocacional agora!</title>
 <link rel="icon" type="image/png" href="" />
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
-<link rel="icon" href="images/favicon.ico">
-<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/logo_icone.png">
+<link rel="shortcut icon" href="images/logo_icone.png" />
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
-<script src="js/script.js"></script> 
-<script src="js/superfish.js"></script>
+<script src="js/script.js"></script>
+<!--<script src="js/superfish.js"></script>-->
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/tmStickUp.js"></script>
@@ -74,7 +74,7 @@
           </h2>
          <p>O teste vocacional não é exato, ele é um indicativo, uma sugestão realizada com base nas suas respostas aqui apresentadas. As questões são desenvolvidas e testadas para montar um perfil que se aproxima do seu e assim sugerir algumas carreiras. O objetivo é ajudá-lo a descobrir seu caminho e sugerir opções para você avaliar.
 Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se identifique com mais de uma das alternativas, assinale apenas uma opção para cada questão. Portanto reflita sobre a que mais lhe diz respeito</p>
-            <h4> <a href="cadastro.php" class="btn btn-primary fazer_teste" >Fazer teste</a></h4>gt
+            <h4> <a href="cadastro.php" class="btn btn-primary fazer_teste" >Fazer teste</a></h4>
 
         </div>
       </div>
