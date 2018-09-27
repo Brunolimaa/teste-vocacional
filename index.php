@@ -74,7 +74,7 @@
           </h2>
          <p>O teste vocacional não é exato, ele é um indicativo, uma sugestão realizada com base nas suas respostas aqui apresentadas. As questões são desenvolvidas e testadas para montar um perfil que se aproxima do seu e assim sugerir algumas carreiras. O objetivo é ajudá-lo a descobrir seu caminho e sugerir opções para você avaliar.
 Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se identifique com mais de uma das alternativas, assinale apenas uma opção para cada questão. Portanto reflita sobre a que mais lhe diz respeito</p>
-          <h4> <a href="cadastro.php" class="btn btn-primary fazer_teste" >Fazer teste</a></h4>
+            <h4> <a href="cadastro.php" class="btn btn-primary fazer_teste" >Fazer teste</a></h4>gt
 
         </div>
       </div>
