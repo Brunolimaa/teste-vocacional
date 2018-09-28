@@ -184,18 +184,15 @@ require_once "App/regCadastro.php";
 </section>
 <script type="text/javascript">
     $(document).ready( function() {
-
     }
     // Evento que é executado ao clicar no botão de enviar
         document.getElementById("send").onclick = function(e) {
             validarcampos();
-
             var nome = $("#nome").val();
             var fone = $("#fone").val();
             var mail = $("#mail").val();
             var cidade = $("#cidade").val();
             var serie = $("#serie").val();
-
             $.ajax({
                 url:'App/regCadastro.php',
                 type:'POST',
@@ -206,22 +203,16 @@ require_once "App/regCadastro.php";
                 //     }
                 // }
             });
-
             e.preventDefault();
-
     };
-
     //Validação Formulario
     function validarcampos() {
       $("#formularioContato").validate({
-
     };
-
     $(document).ready(function () {
                 var $seuCampoData = $(".fone");
                 $seuCampoData.mask('00/00/0000', {reverse: true});
     });
-
 </script>
 <!--==============================
               footer

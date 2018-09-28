@@ -2,7 +2,7 @@
  session_start();
 require_once "App/resultado.php";
 require_once "App/Candidato.php";
-$list = new Candidato; 
+$list = new Candidato;
 //echo $re; exit();
 $resuFinal = $list->lista('Curso',"WHERE grupo = '$re'");
 $resuEmail = $list->lista('Curso',"WHERE grupo = '$re' ORDER BY curs_id DESC LIMIT 5");
@@ -14,28 +14,28 @@ foreach($teste as $tes){
 $resultado =  implode(" - ",$te);
 $ip = $_SERVER['REMOTE_ADDR'];
 $list->update($resultado,$mail, $ip);
-      
-/*			    	
+
+/*
 foreach($resuEmail as $final){
 
 	$corpo .= $final['curs_descricao']." - ";
 
-} 
-				
+}
+
 $para = $mail;
 $assunto = "Resultado - Teste Vocacional UNIDESC 2017";
 $corpo = "Resultado: Teste ".$corpo;
 $cabecalho = "Form: testevocacional@unidesc.com.br"."\r\n".
               "Reply-To: feiraprofissao2017@unidesc.com"."\r\n".
               "X-Mailer: PHP/".phpversion();
-              
+
               mail($para, $assunto, $corpo, $cabecalho);
 		if(isset($_POST['finalizar'])):
 	        header('Location:index.php');
 	        session_unset();
 	        session_destroy();
 	  endif;
-*/        
+*/
 if(isset($_POST['finalizar'])):
 	header('Location:index.php');
 	session_unset();
@@ -63,8 +63,8 @@ endif;
 <script>
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
-  $('#stuck_container').tmStickUp({});  
- }); 
+  $('#stuck_container').tmStickUp({});
+ });
 </script>
 
 </head>
@@ -77,7 +77,7 @@ endif;
     <div class="row">
       <div class="grid_12 rel">
         <h1>
-         
+
         </h1>
       </div>
     </div>
@@ -89,11 +89,11 @@ endif;
     <div class="container">
       <div class="row">
         <div class="grid_12 ">
-               
-         <div class="clear"></div>  
+
+         <div class="clear"></div>
         </div>
-     </div> 
-    </div> 
+     </div>
+    </div>
   </section>
 </header>
 <!--=====================
@@ -106,16 +106,16 @@ endif;
         <!--<h3>Resultado abaixo</h3>
         <img src="images/page2_img.jpg" alt="" class="img_inner fleft">
         <div class="extra_wrapper">
-          <p class="fwn">O teste vocacional é um instrumento que avalia aspectos 
+          <p class="fwn">O teste vocacional é um instrumento que avalia aspectos
 						latentes de sua personalidade, construindo com isso seu perfil profissional;
 						após essa fase é feito uma correlação entre o seu perfil e os perfis
-						profissionais característicos de cursos acadêmicos, a fim de apresentar 
+						profissionais característicos de cursos acadêmicos, a fim de apresentar
 						a você os cursos que exijam de seus estudantes características que você tenha.</p>
 						<h4>Sobre o teste</h4>-->
 						<h4>Sobre o teste</h4>
-          O teste vocacional não determinará um curso específico para que 
-						você faça e assim seja bem realizado, e também não significa que algum 
-						curso que não apareça no resultado da análise deverá ser descartado, 
+          O teste vocacional não determinará um curso específico para que
+						você faça e assim seja bem realizado, e também não significa que algum
+						curso que não apareça no resultado da análise deverá ser descartado,
 						o teste apenas servirá como um norteador.<br><br>
 						 Portanto é importante que de posse do resultado de seu teste, você procure conhecer
                             sobre os cursos apresentados, busque na internet informações sobre os mesmos, procure
@@ -128,25 +128,27 @@ endif;
 			    	echo '<ul>';
 					    foreach($resuFinal as $final){
 
-                            echo '<li>'.utf8_encode($final['curs_descricao']).'</li>';
-					       
-					    } 
+
+
+					      		echo '<li>'.utf8_encode($final['curs_descricao']).'</li>';
+
+					    }
 					  echo '</ul>';
 				?>
-				
+
 				</fieldset>
 				<form class="row" method="post">
 				  <div class="final">
           	<button name="finalizar"> Finalizar teste</button>
           </div>
         </form>
-          
+
         </div>
       </div>
     </div>
   </div>
-  
-  
+
+
 </section>
 <!--==============================
               footer
@@ -154,13 +156,13 @@ endif;
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="grid_12"> 
+      <div class="grid_12">
         <div class="copyright"><span class="brand">UNIDESC</span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a>
           <div class="sub-copy">SISTEMAS DE INFORMAÇÃO <a href="http://www.templatemonster.com/" rel="nofollow">4º e 6º semestre</a></div>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </footer>
 <a href="#" id="toTop" class="fa fa-chevron-up"></a>
 </body>
