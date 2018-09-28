@@ -2,9 +2,7 @@
 class validar{
 
 
-    public function validar1($caminho){
-        session_start();
-        
+    public function validar1($caminho){   
         // verifica se o usuario logou 
         // armazenal um valor em sessao com o nome logado.
         if(!isset($_SESSION['logado'])):

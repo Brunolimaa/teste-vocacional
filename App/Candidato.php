@@ -58,7 +58,7 @@ class Candidato extends Conexao
 		$pdo = parent::getDB();
 		$this->db = $pdo;
 	}
-	public function validaMail(){
+	public function validaMail($email){
 		$preg = preg_match('/[0-9a-z_\.\-]@+[0-9a-z_\.\-]+\.[a-z]{2,4}+/',$this->getMail($email));
 			if($preg){
 				return true;

@@ -14,7 +14,7 @@ abstract class Conexao
 	private static function conectar(){
 		try{
 			if(self::$instance == null):
-				$dns = "mysql:host=localhost;dbname=vocacional";
+				$dns = "mysql:host=localhost;dbname=teste-vocacional";
 				self::$instance = new \PDO($dns, self::USER, self::PASS);
 				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			endif;

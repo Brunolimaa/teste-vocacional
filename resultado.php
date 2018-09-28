@@ -1,9 +1,10 @@
 <?php
- session_start();
+session_start();
 require_once "App/resultado.php";
 require_once "App/Candidato.php";
 $list = new Candidato;
 //echo $re; exit();
+$list = new Candidato; 
 $resuFinal = $list->lista('Curso',"WHERE grupo = '$re'");
 $resuEmail = $list->lista('Curso',"WHERE grupo = '$re' ORDER BY curs_id DESC LIMIT 5");
 $teste = $list->listaUm('curs_descricao','Curso',"WHERE grupo = '$re'");
@@ -14,7 +15,6 @@ foreach($teste as $tes){
 $resultado =  implode(" - ",$te);
 $ip = $_SERVER['REMOTE_ADDR'];
 $list->update($resultado,$mail, $ip);
-
 /*
 foreach($resuEmail as $final){
 
@@ -37,7 +37,7 @@ $cabecalho = "Form: testevocacional@unidesc.com.br"."\r\n".
 	  endif;
 */
 if(isset($_POST['finalizar'])):
-	header('Location:index.php');
+	header('Location:cadastro.php');
 	session_unset();
 	session_destroy();
 endif;
@@ -103,15 +103,6 @@ endif;
   <div class="container">
     <div class="row">
       <div class="grid_12">
-        <!--<h3>Resultado abaixo</h3>
-        <img src="images/page2_img.jpg" alt="" class="img_inner fleft">
-        <div class="extra_wrapper">
-          <p class="fwn">O teste vocacional é um instrumento que avalia aspectos
-						latentes de sua personalidade, construindo com isso seu perfil profissional;
-						após essa fase é feito uma correlação entre o seu perfil e os perfis
-						profissionais característicos de cursos acadêmicos, a fim de apresentar
-						a você os cursos que exijam de seus estudantes características que você tenha.</p>
-						<h4>Sobre o teste</h4>-->
 						<h4>Sobre o teste</h4>
           O teste vocacional não determinará um curso específico para que
 						você faça e assim seja bem realizado, e também não significa que algum
@@ -127,11 +118,7 @@ endif;
         <?php
 			    	echo '<ul>';
 					    foreach($resuFinal as $final){
-
-
-
 					      		echo '<li>'.utf8_encode($final['curs_descricao']).'</li>';
-
 					    }
 					  echo '</ul>';
 				?>

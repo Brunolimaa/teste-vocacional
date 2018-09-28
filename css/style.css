@@ -84,6 +84,10 @@
   border-radius:7px;
   background-color:white;
 }
+
+.op:hover {
+  color: red;
+}
 /*==================================RESPONSIVE LAYOUTS===============================================*/
 @media only screen and (max-width: 767px) {
   .navigation {
