@@ -11,7 +11,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
-<script src="js/script.js"></script> 
+<script src="js/script.js"></script>
 <!--<script src="js/superfish.js"></script>-->
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
@@ -34,20 +34,20 @@
     <div class="row">
       <div class="grid_12 rel">
         <h1>
-         
+
         </h1>
       </div>
     </div>
   </div>
-  
+
   <section class="page1_header">
     <div class="container">
       <div class="row">
-       
-        
+
+
       </div>
     </div>
-  </section> 
+  </section>
 </header>
 
 <!--=====================
@@ -58,7 +58,7 @@
     <div class="row">
       <div class="grid_10 preffix_1 ta__center">
         <div class="greet">
-          
+
           <h2 class="head__1">
            O que você deve saber sobre o teste vocacional!
           </h2>
@@ -83,7 +83,7 @@ Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se ide
               <div class="text1"><a href="#">Analista de sistemas</a></div>
               <p>Analista de sistemas é o profissional encarregado de sistematizar informações, ou seja, é aquela pessoa que realiza estudos de processos computacionais e cujo objetivo é encontrar a melhor e mais racional forma de processar a informação.</p>O analista de sistemas desenvolve soluções que serão aplicadas pelo computador, baseadas na conexão que existe entre o usuário, o programa e o equipamento.
               <br>
-            
+
             </div>
           </div>
           <div class="block-2">
@@ -92,7 +92,7 @@ Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se ide
               <div class="text1"><a href="#">Programador</a></div>
               <p>Para trabalhar como programador web não basta conhecer uma linguagem de programação, é preciso ter domínio de outras ferramentas também. As linguagens mais solicitadas nas empresas são ASP, .NET, Java e PHP.</p> Conhecimento em banco de dados também é fundamental para ingressar em uma empresa com foco em ambientes web. A linguagem SQL é um pré-requisito para a grande maioria das vagas disponíveis no mercado
               <br>
-             
+
             </div>
           </div>
         </div>
@@ -100,17 +100,17 @@ Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se ide
           <h3>Principais áreas </h3>
           <blockquote class="bq1">
             <p>“Administrador de banco de dados; gerente de redes de médio e pequeno porte; projetista e engenheiro de programas; professor de informática, bem como o desenvolvimento de projetos pedagógicos; consultor de equipamentos...”</p>
-            
+
           </blockquote>
           <blockquote class="bq1">
             <p>“Um programador web não precisa ficar confinado em um escritório, defronte a um computador 24 horas por dia. Além de trabalhar em grandes corporações, um profissional desta área também tem seu espaço no meio acadêmico, para realizar pesquisas e desenvolver aplicações em prol da comunidade.... ”</p>
-            
+
           </blockquote>
         </div>
       </div>
     </div>
   </article>
-  
+
 </section>
 <!--==============================
               footer
@@ -118,14 +118,14 @@ Para aproveitar melhor o teste, responda com sinceridade. Ainda que você se ide
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="grid_12"> 
+      <div class="grid_12">
         <div class="copyright"><span class="brand">UNIDESC</span> &copy; <span id="copyright-year"></span> |
          <div class="sub-copy">TURMA <strong><a href="visualizar.php"> SISTEMAS DE INFORMAÇÃO</a> <strong></strong><a  rel="nofollow"> 4º e 6º</a></div>
           </div>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </footer>
 <a href="#" id="toTop" class="fa fa-chevron-up"></a>
 </body>

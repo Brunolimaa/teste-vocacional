@@ -24,7 +24,7 @@ if(isset($_GET['log']) and $_GET['log'] == 'sair'){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <title>Faça o teste agora </title>
 <meta charset="utf-8">

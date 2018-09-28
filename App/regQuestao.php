@@ -21,8 +21,3 @@ foreach($per1 as $v):
 		 endforeach;
 	
 endforeach;
-
- 
-        
-
-

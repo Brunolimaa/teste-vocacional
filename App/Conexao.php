@@ -6,7 +6,7 @@ abstract class Conexao
 {
 	//parametos para se conectar ao banco
 	//usuario e senha
-	const USER = "root";
+	const USER = "limabr";
 	const PASS = "";
 
 	private static $instance = null;
