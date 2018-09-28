@@ -1,10 +1,12 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+	session_start(); 
+} 
 require_once "Conexao.php";
 require_once "Candidato.php";
 
 // Salva as informações buscada no formulario
-//if(isset($_POST['send'])){
 	$nome = filter_input(INPUT_POST,"nome",FILTER_SANITIZE_MAGIC_QUOTES);
 	$mail = filter_input(INPUT_POST,"email",FILTER_SANITIZE_MAGIC_QUOTES);
 	$fone = filter_input(INPUT_POST,"fone",FILTER_SANITIZE_MAGIC_QUOTES);
@@ -19,7 +21,7 @@ require_once "Candidato.php";
 			$cad->setCidade($cidade);
 			$cad->setSerie($serie);
 			$_SESSION['logado'] = null;
-			$valida = $cad->validaMail(); // Verifica o e-mail
+			$valida = $cad->validaMail($mail); // Verifica o e-mail
 				$arr['cand_nome'] = $cad->getNome();
 				//if($valida){
 					$arr['cand_email'] = $cad->getMail();
@@ -29,29 +31,19 @@ require_once "Candidato.php";
 					$arr['date'] = date('d-m-Y H:i:s');
 					$exe = $cad->create("candidato",$arr);
 						if($exe):
-							echo "<p class='bg-success'>Cadastrado com sucesso!</p>";
 							$_SESSION['mail'] = $cad->getMail();
-							//$_SESSION['logado'] = true;
+							$_SESSION['logado'] = true;
 							$_SESSION['candidato'] = $arr;
-
 							header("refresh:0.1;url=questao.php");
-							echo "Olá $nome";
 						else:
-							echo '<p class="bg-danger">Erro ao realizar cadastro.</p>';
 							$_SESSION['logado'] = false;
 
 						endif;
 		}
-				/*}else{
-					echo "<p class='bg-danger' >E-mail invalido!</p>";
-				}*/
-	//echo $_SESSION['mensagem'];
-//}
 if(isset($_POST['send'])){
 	$_SESSION['valor'] += isset($_POST['op']) ? $_POST['op'] : "" ;
 }
 if(!empty($_SESSION['candidato'])){
-
     return true;
 }else{
     return false;

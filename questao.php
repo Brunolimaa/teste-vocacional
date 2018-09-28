@@ -5,7 +5,7 @@ require_once "App/regQuestao.php";
 require 'App/validar.class.php';
 
 $val = new validar();
-//$val->validar1("cadastro.php");
+$val->validar1("cadastro.php");
 
 
 if(isset($_POST['enviar'])):
@@ -14,23 +14,6 @@ if(isset($_POST['enviar'])):
     //header("Location:questao.php");
 
 endif;
-// $list = new Candidato;
-//      if(empty($pg)){
-//          $per1 = $list->lista('questao_enunciado',"WHERE ques_id = '1'");
-//          $op1 = $list->lista('questao_opcoes',"WHERE quop_enunciado_id_enunciado = '1'");
-//      }elseif($pg>14){
-//         header("Location:resultado.php");
-//         unset($_SESSION['logado']);
-//         unset($_SESSION['pag']);
-//      }else{
-//          $n = 1;
-//          $n += $pg;
-//           $totalPag = 16 - $n;
-
-//             $per1 = $list->lista('questao_enunciado',"WHERE ques_id = '$n'");
-//             $op1 = $list->lista('questao_opcoes',"WHERE quop_enunciado_id_enunciado = '$n'");
-//      }
-
 
 ?>
 <!DOCTYPE html>
@@ -55,6 +38,8 @@ endif;
     <script src="js/TMForm.js"></script>
     <script src="js/modal.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 
     <script>
@@ -63,17 +48,16 @@ endif;
             $('#stuck_container').tmStickUp({});
         });
     </script>
-    <!--[if lt IE 8]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-    </div>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" media="screen" href="css/ie.css">
-    <![endif]-->
+	<style>
+		p:hover {
+			color: #03a9f4;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		p {
+			transition: 0.3s;		
+		}
+	</style>
 </head>
 <body>
 <!--==============================
@@ -118,7 +102,7 @@ endif;
         <div class="container">
 <!--         Trigger the modal with a button -->
 <!--         Modal -->
-          <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -131,7 +115,6 @@ endif;
                       <label class="aviso" id="avisonaomarcado" style="text-align: center"></label>
                   </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger close-modal" name="fechar" id="fechar" >Fechar</button>
                   <button type="button" class="btn btn-primary" name="enviar" id="proximo"  >Proximo</button>
                 </div>
               </div>
@@ -185,14 +168,44 @@ endif;
             });
 
         }else {
-            count --;
-            document.getElementById("avisonaomarcado").innerHTML = "Opção obrigatória!";
+            swal("Ops!", "Opção obrigatória", "error");
         }
 
         if(id > 15)
             location.href="resultado.php";
 
     });
+	
+	function selecionarQuestao() {
+	    var id = count;
+        var var_name = $("input[name='op']:checked").val();
+        count++;
+
+        //Verificar se o campo foi marcado
+        if((var_name != null)){
+            document.getElementById("avisonaomarcado").innerHTML = "";
+            $.ajax({
+                url:'App/regQuestao.php',
+                type:'GET',
+                data: {cont:id},
+                success:function(r){
+                    $("#formularioQuestao").html(r);
+                }
+            });
+			
+            $.ajax({
+                url:'App/resultado.php',
+                type:'GET',
+                data: {letra:var_name},
+            });
+
+        }else {
+            swal("Ops!", "Opção obrigatória", "error");
+        }
+
+        if(id > 15)
+            location.href="resultado.php";
+	}
 
     $("#proximo").click(function(){
 
